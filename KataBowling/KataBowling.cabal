@@ -1,0 +1,39 @@
+cabal-version:      3.0
+name:               KataBowling
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            MIT
+license-file:       LICENSE
+author:             ElPedrangas03
+maintainer:         s21120199@alumnos.itsur.edu.mx
+-- copyright:
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  MyLib
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base ^>=4.17.2.1
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+test-suite KataBowling-test
+    import:           warnings
+    default-language: Haskell2010
+    -- other-modules:
+    -- other-extensions:
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Test.hs
+    build-depends:
+        base ^>=4.17.2.1,
+        tasty,
+        tasty-hunit,
+        KataBowling
